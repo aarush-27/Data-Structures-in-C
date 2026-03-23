@@ -1,0 +1,25 @@
+// Assuming the operations pop,push,empty etc. are defined as standard functions
+
+// Take the origianl stack and an empty stack
+
+stack int s_main[STACKSIZE];
+
+// Taking input
+
+stack int s_temp[STACKSIZE]; // Leave it empty
+
+/*
+* The main reason why arrays are different from stacks is that we can acess any element at any positions in the array
+* In a stack we can only access the topmost element of the stack
+* So we take out elements and put them temporarily in s_temp to access the element we want
+*/
+
+int i; // Index of the element we want to access
+int x;
+
+for (int j=STACKSIZE-1;j>i;j--)
+{
+    push(&s_temp,pop(&s_main));
+}
+x = stacktop(&s_main);
+// then we can reverse it
